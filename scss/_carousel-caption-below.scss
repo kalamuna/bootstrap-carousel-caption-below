@@ -1,0 +1,57 @@
+// Carosel custom components
+/////////////////////////////
+
+// Stating the variables first, note this is also in the global variables;
+$carousel-caption-below-height: 175px !default;
+$carousel-caption-below-color: $gray-light !default;
+$carousel-caption-below-bg: #222 !default;
+$carousel-caption-below-border: darken($carousel-caption-below-bg, 10%) !default;
+
+
+
+
+// Wrapper class for context and overrides.
+.carosel-captions-below {
+  // Move the indicators to the top right.
+  .carousel-indicators {
+    bottom: initial;
+    right: 10px;
+    left: auto;
+    width: auto;
+    top: 10px;
+    @media (min-width: $screen-sm-min) {
+      top: 20px;
+      right: 20px;
+    }
+  }
+
+  // Adjust the controls for the larger height;
+  .carousel-control {
+    bottom: auto;
+    top: 30%;
+    @media (min-width: $screen-sm-min) {
+      top: 42%;
+    }
+  }
+}
+
+// Change the caption class to below for the varitation.
+// Easier than resetting all the bootstrap classes.
+.carousel-caption-below {
+  height: $carousel-caption-below-height;
+  padding: $padding-small-vertical $padding-small-horizontal;
+  // Allow the caption to be longer if needed.
+  overflow-y: scroll;
+  border: $carousel-caption-below-border;
+  color: $carousel-caption-below-color;
+  background: $carousel-caption-below-bg;
+  font-size: $font-size-small;
+  & > *{
+    color: inherit;
+  }
+  @media (min-width: $screen-sm-min) {
+    padding: $padding-base-vertical $padding-base-horizontal;
+    height: ($carousel-caption-below-height * (75/100));
+    font-size: $font-size-base;
+  }
+}
