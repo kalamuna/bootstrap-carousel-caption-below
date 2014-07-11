@@ -6,31 +6,55 @@ $carousel-caption-below-height: 175px !default;
 $carousel-caption-below-color: $gray-light !default;
 $carousel-caption-below-bg: #222 !default;
 $carousel-caption-below-border: darken($carousel-caption-below-bg, 10%) !default;
-
-
-
+$carousel-caption-offset: 10px !default;
+$carousel-caption-below-control-padding: 20px !default;
+$carousel-caption-below-control-bg: #222222 !default;
 
 // Wrapper class for context and overrides.
 .carosel-captions-below {
   // Move the indicators to the top right.
   .carousel-indicators {
+    top: $carousel-caption-offset;
+    right: $carousel-caption-offset;
     bottom: initial;
-    right: 10px;
     left: auto;
     width: auto;
-    top: 10px;
     @media (min-width: $screen-sm-min) {
-      top: 20px;
-      right: 20px;
+      top: ($carousel-caption-offset*2);
+      right: ($carousel-caption-offset*2);
     }
   }
 
   // Adjust the controls for the larger height;
   .carousel-control {
-    bottom: auto;
+    @include square(25px);
     top: 30%;
+    right: ($carousel-caption-offset*2);
+    bottom: auto;
+    padding: $carousel-caption-below-control-padding;
+    border-radius: 50%;
+    border: 2px solid $carousel-indicator-border-color;
+    background: $carousel-caption-below-control-bg;
+    &.left{
+      left: ($carousel-caption-offset*2);
+    }
     @media (min-width: $screen-sm-min) {
+      @include square(45px);
       top: 42%;
+      right: $carousel-caption-offset;
+      padding: ($carousel-caption-below-control-padding + 10);
+      &.left{
+        left: $carousel-caption-offset;
+      }
+    }
+    .icon-prev,
+    .icon-next,
+    .glyphicon,
+    .fa {
+      top: 25%;
+      @media (min-width: $screen-sm-min) {
+        top: 50%;
+      }
     }
   }
 }
@@ -46,7 +70,7 @@ $carousel-caption-below-border: darken($carousel-caption-below-bg, 10%) !default
   color: $carousel-caption-below-color;
   background: $carousel-caption-below-bg;
   font-size: $font-size-small;
-  & > *{
+  & > * {
     color: inherit;
   }
   @media (min-width: $screen-sm-min) {
