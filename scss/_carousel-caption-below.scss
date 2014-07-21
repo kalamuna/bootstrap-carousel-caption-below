@@ -29,7 +29,7 @@ $carousel-caption-below-control-bg: #222222 !default;
   // Adjust the controls for the larger height;
   .carousel-control {
     @include square(25px);
-    top: $carousel-caption-offset;
+    top: $carousel-caption-offset-top;
     right: ($carousel-caption-offset*2);
     bottom: auto;
     padding: $carousel-caption-below-control-padding;
