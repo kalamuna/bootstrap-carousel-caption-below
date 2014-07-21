@@ -7,6 +7,7 @@ $carousel-caption-below-color: $gray-light !default;
 $carousel-caption-below-bg: #222 !default;
 $carousel-caption-below-border: darken($carousel-caption-below-bg, 10%) !default;
 $carousel-caption-offset: 10px !default;
+$carousel-caption-offset-top: 30% !default;
 $carousel-caption-below-control-padding: 20px !default;
 $carousel-caption-below-control-bg: #222222 !default;
 
@@ -28,7 +29,7 @@ $carousel-caption-below-control-bg: #222222 !default;
   // Adjust the controls for the larger height;
   .carousel-control {
     @include square(25px);
-    top: 30%;
+    top: $carousel-caption-offset;
     right: ($carousel-caption-offset*2);
     bottom: auto;
     padding: $carousel-caption-below-control-padding;
@@ -40,20 +41,11 @@ $carousel-caption-below-control-bg: #222222 !default;
     }
     @media (min-width: $screen-sm-min) {
       @include square(45px);
-      top: 42%;
+      top: ($carousel-caption-offset-top + 12%);
       right: $carousel-caption-offset;
       padding: ($carousel-caption-below-control-padding + 10);
       &.left{
         left: $carousel-caption-offset;
-      }
-    }
-    .icon-prev,
-    .icon-next,
-    .glyphicon,
-    .fa {
-      top: 25%;
-      @media (min-width: $screen-sm-min) {
-        top: 50%;
       }
     }
   }
@@ -77,5 +69,29 @@ $carousel-caption-below-control-bg: #222222 !default;
     padding: $padding-base-vertical $padding-base-horizontal;
     height: ($carousel-caption-below-height * (75/100));
     font-size: $font-size-base;
+  }
+}
+
+
+
+
+.carousel-control {
+  .fa-chevron-left,
+  .fa-chevron-right {
+    position: absolute;
+    top: $carousel-caption-offset-top;
+    z-index: 5;
+    display: inline-block;
+    @media (min-width: $screen-sm-min) {
+      top: ($carousel-caption-offset-top + 12%);
+    }
+  }
+  .fa-chevron-left {
+    left: 50%;
+    margin-left: -10px;
+  }
+  .fa-chevron-right {
+    right: 50%;
+    margin-right: -10px;
   }
 }
