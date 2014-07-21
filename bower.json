@@ -1,13 +1,13 @@
 {
   "name": "bootstrap-carosel-caption-below",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "authors": [
     "Steven Bassett <steven.j.bassett@gmail.com>"
   ],
   "description": "Variation on the bootstrap carousel components to allow for captions to be placed below the slide image",
   "main": [
-      "scss/_carousel-caption-below.scss",
-      "carousel-caption-below.css"
+    "scss/_carousel-caption-below.scss",
+    "carousel-caption-below.css"
   ],
   "keywords": [
     "Bootstrap",
