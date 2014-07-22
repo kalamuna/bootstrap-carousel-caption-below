@@ -2,7 +2,7 @@
 /////////////////////////////
 
 // Stating the variables first, note this is also in the global variables;
-$carousel-caption-below-height: 175px !default;
+$carousel-caption-below-height: 100px !default;
 $carousel-caption-below-color: $gray-light !default;
 $carousel-caption-below-bg: #222 !default;
 $carousel-caption-below-border: darken($carousel-caption-below-bg, 10%) !default;
@@ -67,7 +67,7 @@ $carousel-caption-below-control-bg: #222222 !default;
   }
   @media (min-width: $screen-sm-min) {
     padding: $padding-base-vertical $padding-base-horizontal;
-    height: ($carousel-caption-below-height * (75/100));
+    height: ($carousel-caption-below-height * 1.25);
     font-size: $font-size-base;
   }
 }
